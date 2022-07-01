@@ -114,6 +114,7 @@ GEM
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.4.1)
+    pgreset (0.3)
     public_suffix (4.0.7)
     puma (5.6.4)
       nio4r (~> 2.0)
@@ -155,6 +156,7 @@ GEM
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redis (4.7.0)
     regexp_parser (2.5.0)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -187,6 +189,10 @@ GEM
       sprockets (>= 3.0.0)
     thor (1.2.1)
     tilt (2.0.10)
+    turbo-rails (1.1.1)
+      actionpack (>= 6.0.0)
+      activejob (>= 6.0.0)
+      railties (>= 6.0.0)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -227,12 +233,15 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)
+  pgreset
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.1)
+  redis (~> 4.0)
   sass-rails (>= 6)
   selenium-webdriver
   spring
+  turbo-rails (~> 1.1)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)

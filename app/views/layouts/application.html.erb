@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Chatapp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -8,11 +9,27 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
-  </body>
+    <style>
+        <%=".msg-#{current_user&.id}"%> {
+            background-color: #007bff !important;
+            padding: 10px;
+        }
+
+        <%=".cont-#{current_user&.id}"%> {
+            display: flex;
+            justify-content: flex-end
+        }
+    </style>
+</head>
+
+<body>
+    <%= render 'layouts/header' %>
+    <div class="container">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+    </div>
+</body>
+
 </html>

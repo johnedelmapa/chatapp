@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-md-4">
+        <h5> Hi! <%= @current_user.username %> </h5>
+        <div class="card">
+            <div class="card-header">
+                List of Users
+            </div>
+            <ul class="list-group list-group-flush">
+                <%= turbo_stream_from "users" %>
+                <div id="users">
+                    <%= render @users %>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md-8 bg-dark text-light">
+        <% if @single_room %>
+        <h4 class="text-center m-4"> <%= @user&.username %> </h4>
+            <%= turbo_stream_from @single_room %>
+            <div id="messages">
+                <%= render @messages %>
+            </div>
+            <%= render partial: 'messages/new_message_form' %>
+        <% end %>
+    </div>
+</div>
